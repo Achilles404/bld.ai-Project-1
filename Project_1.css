@@ -5,6 +5,8 @@
     font-family: udemy sans, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe;
 }
 
+
+
 .nav-bar {
     align-items: center;
     display: flex;
@@ -50,31 +52,6 @@
 
 .search-bar img {
     width: 25px;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    border: 1px solid #ddd;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1
 }
 
 .show {
@@ -216,7 +193,7 @@ button:hover {
     padding: 2rem;
 }
 
-.c-div {
+.carousel-inner{
     margin-top: 3%;
     display: flex;
     flex-wrap: wrap;

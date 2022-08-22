@@ -1,7 +1,9 @@
 function addToHTML(data) {
     let courses = data["courses"];
 
-    let res1 = "", res2 = "";
+    let res1 = `<div id="carouselExampleControls" class="carousel slide"
+    data-bs-ride="carousel">
+    <div class="carousel-inner">`;
 
     for (var i = 0; i < courses.length; i++) {
         let author = courses[i]["author"];
@@ -9,18 +11,40 @@ function addToHTML(data) {
         let price = courses[i]["price"];
         let rating = courses[i]["rating"];
         let title = courses[i]["title"];
+        if (i == 0) {
 
-        res1 += '<div class = "grid-item">';
-        res1 += `<img src="${image}" alt="c1" class="c1">
-                <h3>${title}</h3>
-                <p>${author}</p>
-                <h3>&euro; ${price}</h3>`;
-        res1 += "</div>";
+            res1 += `<div class="grid-item active">`;
 
-        res2 += `<a href="#">${title}</a>`;
+        }else if(i % 4 == 0 && i != courses.length - 1){
+            res1 += ` </div>`;
+            res1 +=`<div class="grid-item">`;
+        }
+        res1 += `
+            <img src="${image}" alt="c1" class="c1">
+            <h3 class = "title">${title}</h3>
+            <p>${author}</p>
+            <h3>&euro; ${price}</h3>`;
+
     }
+    res1 += `</div>`;
+    res1 += `
+    </div >
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div >
+            `;
+
     document.getElementsByClassName("c-div")[0].innerHTML = res1;
-    document.getElementById("myDropdown").innerHTML = res2;
 }
 
 function filterFunction() {
@@ -30,16 +54,10 @@ function filterFunction() {
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
 
-    a = document.getElementById("myDropdown").getElementsByTagName("a");
-
-    if (filter == ""){
-        document.getElementById("myDropdown").style.display = "none";
-    }else{
-        document.getElementById("myDropdown").style.display = "block";
-    }
+    a = document.getElementsByClassName("c-div")[0].getElementsByClassName("grid-item");
 
     for (var i = 0; i < a.length; i++) {
-        txtValue = a[i].innerHTML;
+        txtValue = a[i].getElementsByClassName("title")[0].innerHTML;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             a[i].style.display = "";
         } else {
