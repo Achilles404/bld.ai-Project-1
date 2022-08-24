@@ -12,18 +12,22 @@ function addToHTML(data) {
         let rating = courses[i]["rating"];
         let title = courses[i]["title"];
         if (i == 0) {
-
-            res1 += `<div class="grid-item active">`;
-
+            res1 += `<div class="carousel-item active">
+                    <div class="item-container">`;
         }else if(i % 4 == 0 && i != courses.length - 1){
-            res1 += ` </div>`;
-            res1 +=`<div class="grid-item">`;
+            res1 += ` </div>
+                      </div>`;
+            res1 +=`<div class="carousel-item">
+                    <div class="item-container">`;
         }
         res1 += `
+            <div class="grid-item">
             <img src="${image}" alt="c1" class="c1">
-            <h3 class = "title">${title}</h3>
+            <h5 class = "title">${title}</h3>
             <p>${author}</p>
-            <h3>&euro; ${price}</h3>`;
+            <h5>&euro; ${price}</h3>
+            </div>
+            `;
 
     }
     res1 += `</div>`;
