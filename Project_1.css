@@ -38,20 +38,12 @@
 .search-bar .search {
     background-color: transparent;
     outline-style: none;
-    margin-left: 1%;
     border: none;
-    width: 85%;
-
+    width: 70%;
+    margin-top: 15px;
 }
-
-.search-bar .btn {
-    margin-top: 10px;
-    background-color: transparent;
-    border: none;
-}
-
-.search-bar img {
-    width: 25px;
+.search-bar .btn img{
+    width: 30px;
 }
 
 .show {
@@ -193,16 +185,41 @@ button:hover {
     padding: 2rem;
 }
 
-.carousel-inner{
-    margin-top: 3%;
+.item-container{
+    border: rgb(202, 202, 202) solid;
+
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding-left: 100px;
+    padding-top: 40px;
 }
-
 .grid-item {
-    width: 290px;
-    padding: 28px;
+    width: 200px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.grid-item img{
+    width: 200px;
+}
+.grid-item h4{
+    width: 200px;
+}
+.grid-item p{
+    width: 200px;
+}
+.carousel-control-next-icon{
+    content: url("images/icons8-arrow-91-right.png");
+    width: 50px;
+    height: 50px;
+    margin-left: 70px;
+    
+}
+.carousel-control-prev-icon{
+    content: url("images/icons8-arrow-91-left.png");
+    width: 50px;
+    height: 50px;
+    margin-right: 70px;
 }
 
 footer .foot {
@@ -260,6 +277,24 @@ footer {
     .categories,
     .Business,
     .Teach {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .index-3{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .index-2{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .index-1{
         display: none;
     }
 }
