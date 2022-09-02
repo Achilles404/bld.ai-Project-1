@@ -21,7 +21,7 @@ function addToHTML(data) {
                     <div class="item-container">`;
         }
         res1 += `
-            <div class="grid-item">
+            <div class="grid-item index-${i%4}">
             <img src="${image}" alt="c1" class="c1">
             <h5 class = "title">${title}</h3>
             <p>${author}</p>
